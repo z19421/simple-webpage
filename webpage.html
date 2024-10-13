@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple webpage</title>
+</head>
+<body>
+  <div id="s">
+    <h3>Click the button below to start</h3>
+    <button class="start" id="bs">Start</button>
+    <style>
+      .start {
+        font-size: 20px;
+        color: #FFFFFF;
+        border-radius: 5px;
+        border-left-width: 5px;
+        width: 100px;
+        height: 50px;
+        background-color: #A0A0A0;
+        border-left-color: #4CE242;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+      }
+    </style>
+  </div>
+  
+  <div id="form" hidden=true>
+    <form>
+      <h4>Choose a color and click the submit button</h4>
+      <input type="color" id="color" class="col"> 
+      <input type="button" value="submit" id="button"> 
+      <input type="button" id="re" value="reset">
+      <h6>The color you choose is used and set as the background color.</h6>
+    </form>
+    <style>
+      .h4 {
+        background-color: #FFFFFF;
+      }
+      .h6 {
+        background-color: #FFFFFF;
+      }
+      .col {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </div>
+
+  <script>
+    document.getElementById("bs").onclick = function() {
+      document.getElementById("s").style.display = "none";
+      document.getElementById("form").style.display = "block";
+    };
+
+    document.getElementById("button").onclick = function() {
+      const chosenColor = document.getElementById("color").value;
+      document.body.style.backgroundColor = chosenColor;
+    };
+
+    document.getElementById("re").onclick = function() {
+      document.body.style.backgroundColor = "#ffffff";
+    };
+  </script>
+</body>
+</html>
